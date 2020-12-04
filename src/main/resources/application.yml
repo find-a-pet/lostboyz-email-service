@@ -1,0 +1,8 @@
+spring:
+  mail:
+    default-encoding: UTF-8
+    host: smtp.foo.com # TODO: Change these per environment
+    username: john@doe.com
+    password: password
+    port: 25
+    protocol: smtp
