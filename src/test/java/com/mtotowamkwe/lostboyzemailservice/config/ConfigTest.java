@@ -1,5 +1,6 @@
 package com.mtotowamkwe.lostboyzemailservice.config;
 
+import com.mtotowamkwe.lostboyzemailservice.util.Constants;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.templatemode.TemplateMode;
+
+import java.nio.charset.StandardCharsets;
 
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.*;
@@ -36,6 +40,10 @@ public class ConfigTest {
     public void htmlTemplateResolver() {
         assertNotNull(resolver);
         assertThat(resolver, instanceOf(SpringResourceTemplateResolver.class));
+        assertTrue(resolver.getPrefix().equals(Constants.TEMPLATES));
+        assertTrue(resolver.getSuffix().equals(Constants.SUFFIX));
+        assertTrue(resolver.getTemplateMode().equals(TemplateMode.HTML));
+        assertTrue(resolver.getCharacterEncoding().equals(StandardCharsets.UTF_8.name()));
     }
 
     @Test
