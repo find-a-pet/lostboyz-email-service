@@ -106,8 +106,8 @@ public class EmailServiceTest {
         assertThat(aUser).usingRecursiveComparison().isEqualTo(user);
     }
 
-    @Test(expected = NullPointerException.class)
-    public void testNullPointerException() {
+    @Test(expected = IllegalArgumentException.class)
+    public void testIllegalArgumentException() {
         User emptyUser = new User();
         EmailService emailService = new EmailService(emailSender, templateEngine);
         emailService.sendSimpleMessage(emptyUser);
