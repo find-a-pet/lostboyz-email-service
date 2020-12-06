@@ -1,8 +1,11 @@
+server:
+  port: 14000
+
 spring:
   mail:
     default-encoding: UTF-8
-    host: smtp.foo.com # TODO: Change these per environment
-    username: john@doe.com
-    password: password
+    host: smtp.lostboyz.com # TODO: Change these per environment
+    username: admin@lostboyz.com
+    password: 86883e7f-77a2-4372-ad76-d9532084d9c0
     port: 25
     protocol: smtp

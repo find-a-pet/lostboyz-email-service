@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <!--
+            TODO: Extract styles to a css subdirectory
+            <link rel="stylesheet" type="text/css" th:href="@{/resources/static/css/style.css}">
+        -->
+    </head>
+    <body>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+                <td valign="top" align="center" bgcolor="#f3f3f3">
+                    <table width="580" border="0" cellpadding="0" cellspacing="0">
+                        <tbody>
+                        <tr>
+                            <td style="font-size: 10px; line-height: 10px;">
+                                <img src="@{/resources/static/images/spacer.gif}" width="1" height="10" alt="" style="display: block;"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="580" align="center" bgcolor="#ffffff"
+                                style="padding-top: 20px; padding-right: 20px; padding-bottom: 20px; padding-left: 20px;">
+                                <div style="text-align: center;">
+                                              <span style="font-size: 11pt; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                                                  <span>
+                                                      <span>
+                                                          <b th:text="'Dear ' + ${name} + ','"></b>
+                                                      </span>
+                                                  </span>
+                                              </span>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div style="text-align: center;">
+                                              <span style="font-size: 11pt; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+                                                  <span>
+                                                      <span th:text="'Your verification code is ' + <b>${code}</b> + ''"></span>
+                                                  </span>
+                                              </span>
+                                </div>
+                                <div>&nbsp;</div>
+                                <div style="text-align: center;">
+                                            <span
+                                              th:text="'Enter this verification code in the window where you began signing up for your lostboyz account.'"
+                                              style="font-size: 10pt; text-align: center; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;"></span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td
+                              style="font-size: 10px; line-height: 10px;">
+                                <img src="@{/resources/static/images/spacer.gif}" width="1" height="10" alt="" style="display: block;"/>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </body>
+</html>

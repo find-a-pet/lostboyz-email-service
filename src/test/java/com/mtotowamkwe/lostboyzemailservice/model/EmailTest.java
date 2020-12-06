@@ -31,13 +31,14 @@ public class EmailTest {
 
     @Before
     public void setUp() throws Exception {
-        model = Map.of(Constants.TEST_USER_NAME_KEY, Constants.TEST_USER_NAME,
-                Constants.TEST_USER_CODE_KEY, Constants.TEST_USER_CODE);
+        model = Map.of(Constants.USER_NAME_KEY, Constants.TEST_USER_NAME,
+                Constants.USER_CODE_KEY, Constants.TEST_USER_CODE);
         context = new Context();
         context.setVariables(model);
         email = new Email();
         email.setTo(Constants.TEST_USER_EMAIL);
-        email.setFrom(Constants.TEST_EMAIL_FROM);
+        email.setFrom(Constants.EMAIL_FROM);
+        email.setSubject(Constants.EMAIL_SUBJECT);
         email.setModel(model);
         email.setContent(template.process(Constants.TEST_EMAIL_TEMPLATE_NAME,context));
     }
