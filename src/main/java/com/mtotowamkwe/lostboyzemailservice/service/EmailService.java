@@ -74,8 +74,6 @@ public class EmailService {
 
         email.setContent(htmlContent);
 
-        log.debug("\n_HTML_CONTENT_\n" + htmlContent);
-
         return email;
     }
 }
