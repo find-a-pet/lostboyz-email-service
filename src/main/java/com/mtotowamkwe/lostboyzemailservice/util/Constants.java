@@ -25,6 +25,8 @@ public class Constants {
 
     // Endpoints
     public static final String API_EMAIL_USER_ENDPOINT = "/api/v1/email";
-    public static final String API_TEST_EMAIL_USER_ENDPOINT = "/api/v1/email/test";
 
+    public static final String TEST_SPRING_APPLICATION_DESCRIPTION = "Lostboyz send email service";
+    public static final String  TEST_SPRING_APPLICATION_VERSION = "0.0.1-SNAPSHOT";
+    public static final String TEST_SPRING_APPLICATION_TITLE = "lostboyz-email-user-service";
 }

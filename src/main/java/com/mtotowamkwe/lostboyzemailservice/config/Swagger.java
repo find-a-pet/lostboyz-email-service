@@ -39,6 +39,6 @@ public class Swagger {
     }
 
     protected String version() {
-        return this.environment.getProperty("property");
+        return this.environment.getProperty("version");
     }
 }

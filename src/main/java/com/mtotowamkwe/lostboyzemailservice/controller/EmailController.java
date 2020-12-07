@@ -37,9 +37,4 @@ public class EmailController {
                 .body(entityModel);
     }
 
-    @RequestMapping(value = Constants.API_TEST_EMAIL_USER_ENDPOINT, method = RequestMethod.POST)
-    public ResponseEntity<?> validateEmailSent(@Valid @NonNull @RequestBody User user) {
-        return sendEmail(user);
-    }
-
 }
