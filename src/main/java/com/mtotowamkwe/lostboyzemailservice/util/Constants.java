@@ -25,5 +25,6 @@ public class Constants {
 
     // Endpoints
     public static final String API_EMAIL_USER_ENDPOINT = "/api/v1/email";
+    public static final String API_TEST_EMAIL_USER_ENDPOINT = "/api/v1/email/test";
 
 }

@@ -1,7 +1,18 @@
+description:  ${spring.application.description}
+title:  ${spring.application.name}
+version:  ${spring.application.version}
+
 server:
   port: 14000
+  servlet:
+    context-path:
 
 spring:
+  application:
+    description: Lostboyz send email service
+    id: lostboyz-email-user-service
+    name: lostboyz-email-user-service
+    version: 0.0.1-SNAPSHOT
   mail:
     default-encoding: UTF-8
     host: smtp.lostboyz.com # TODO: Change these per environment
