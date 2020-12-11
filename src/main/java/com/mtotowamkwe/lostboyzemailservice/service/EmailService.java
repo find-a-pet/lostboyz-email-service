@@ -64,7 +64,6 @@ public class EmailService {
         email.setFrom(Constants.EMAIL_FROM);
         email.setSubject(Constants.EMAIL_SUBJECT);
         email.setModel(new HashMap<String, String>(){{
-                put(Constants.USER_NAME_KEY, user.getName());
                 put(Constants.USER_CODE_KEY, user.getCode());
             }});
 

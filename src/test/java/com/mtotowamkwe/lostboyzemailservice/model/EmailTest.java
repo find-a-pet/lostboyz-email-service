@@ -31,8 +31,7 @@ public class EmailTest {
 
     @Before
     public void setUp() throws Exception {
-        model = Map.of(Constants.USER_NAME_KEY, Constants.TEST_USER_NAME,
-                Constants.USER_CODE_KEY, Constants.TEST_USER_CODE);
+        model = Map.of(Constants.USER_CODE_KEY, Constants.TEST_USER_CODE);
         context = new Context();
         context.setVariables(model);
         email = new Email();

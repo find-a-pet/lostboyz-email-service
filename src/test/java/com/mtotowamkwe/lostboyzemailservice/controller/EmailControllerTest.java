@@ -36,7 +36,6 @@ public class EmailControllerTest {
         user = new User();
         user.setCode(Constants.TEST_USER_CODE);
         user.setEmail(Constants.TEST_USER_EMAIL);
-        user.setName(Constants.TEST_USER_NAME);
     }
 
     @Test

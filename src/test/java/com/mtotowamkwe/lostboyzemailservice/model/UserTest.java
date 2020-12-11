@@ -24,7 +24,6 @@ public class UserTest {
     public void setUp() throws Exception {
         user = new User();
         user.setCode(Constants.TEST_USER_CODE);
-        user.setName(Constants.TEST_USER_NAME);
         user.setEmail(Constants.TEST_USER_EMAIL);
     }
 
