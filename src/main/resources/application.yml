@@ -24,3 +24,6 @@ spring:
     password: ${SMTP_PASS}
     port: 25
     protocol: smtp
+  output:
+    ansi:
+      enabled: detect
