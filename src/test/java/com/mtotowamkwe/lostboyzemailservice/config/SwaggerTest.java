@@ -4,8 +4,6 @@ import com.mtotowamkwe.lostboyzemailservice.util.Constants;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -27,8 +25,6 @@ import static org.junit.Assert.*;
 @ContextConfiguration(classes = {Config.class})
 @TestPropertySource(locations = "classpath:application.yml")
 public class SwaggerTest {
-
-    private static final Logger LOG = LoggerFactory.getLogger(SwaggerTest.class);
 
     @Autowired
     private Environment environment;

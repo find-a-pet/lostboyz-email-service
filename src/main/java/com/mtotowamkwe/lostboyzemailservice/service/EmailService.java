@@ -21,7 +21,7 @@ import java.util.HashMap;
 @Service
 public class EmailService {
 
-    private static final Logger log = LoggerFactory.getLogger(EmailService.class);
+    private static final Logger LOG = LoggerFactory.getLogger(EmailService.class);
 
     private final JavaMailSender emailSender;
 
@@ -50,7 +50,7 @@ public class EmailService {
 
             emailSender.send(message);
         } catch (MessagingException e) {
-            log.error("Error at sendSimpleMessage(Email email).", e);
+            LOG.error("Error at sendSimpleMessage(Email email).", e);
             throw new EmailNotSentException(user);
         }
 

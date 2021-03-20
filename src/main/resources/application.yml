@@ -27,3 +27,9 @@ spring:
   output:
     ansi:
       enabled: detect
+
+logging:
+  file:
+    name: logs/lostboyz-email-service.log
+  level:
+    root: ERROR

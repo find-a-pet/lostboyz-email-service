@@ -4,6 +4,8 @@ import com.mtotowamkwe.lostboyzemailservice.model.User;
 import com.mtotowamkwe.lostboyzemailservice.model.restful.UserModelAssembler;
 import com.mtotowamkwe.lostboyzemailservice.service.EmailService;
 import com.mtotowamkwe.lostboyzemailservice.util.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
@@ -18,6 +20,8 @@ import javax.validation.Valid;
 
 @Controller
 public class EmailController {
+
+    private static final Logger LOG = LoggerFactory.getLogger(EmailController.class);
 
     private final EmailService emailService;
 

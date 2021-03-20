@@ -30,7 +30,7 @@ public class EmailTest {
     private Context context;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         model = Map.of(Constants.USER_CODE_KEY, Constants.TEST_USER_CODE);
         context = new Context();
         context.setVariables(model);

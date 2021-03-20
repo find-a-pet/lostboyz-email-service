@@ -36,7 +36,7 @@ public class EmailServiceTest {
     private SpringTemplateEngine templateEngine;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         user = new User();
         user.setCode(Constants.TEST_USER_CODE);
         user.setEmail(Constants.TEST_USER_EMAIL);
