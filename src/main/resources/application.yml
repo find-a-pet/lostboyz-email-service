@@ -22,7 +22,7 @@ spring:
     host: ${SMTP_HOST}
     username: ${SMTP_NAME}
     password: ${SMTP_PASS}
-    port: 25
+    port: 587
     protocol: smtp
   output:
     ansi:
