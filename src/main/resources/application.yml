@@ -24,6 +24,10 @@ spring:
     password: ${SMTP_PASS}
     port: 587
     protocol: smtp
+    test-connection: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
   output:
     ansi:
       enabled: detect
