@@ -17,17 +17,6 @@ spring:
     id: lostboyz-email-user-service
     name: lostboyz-email-user-service
     version: 0.0.1-SNAPSHOT
-  mail:
-    default-encoding: UTF-8
-    host: ${SMTP_HOST}
-    username: ${SMTP_NAME}
-    password: ${SMTP_PASS}
-    port: 587
-    protocol: smtp
-    test-connection: true
-    properties.mail.smtp:
-      auth: true
-      starttls.enable: true
   output:
     ansi:
       enabled: detect
