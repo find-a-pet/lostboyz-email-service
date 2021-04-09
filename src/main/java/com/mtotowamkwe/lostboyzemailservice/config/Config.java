@@ -52,14 +52,14 @@ public class Config {
 
         mailSender.setDefaultEncoding("UTF-8");
         mailSender.setHost(host);
-        mailSender.setPort(465);
+        mailSender.setPort(587);
         mailSender.setPassword(password);
         mailSender.setUsername(username);
         mailSender.setProtocol("smtp");
 
         Properties properties = mailSender.getJavaMailProperties();
         properties.put("mail.smtp.auth", "true");
-        properties.put("mail.smtp.ssl.enable", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
 
         return mailSender;
     }
