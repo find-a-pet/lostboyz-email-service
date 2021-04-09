@@ -52,7 +52,7 @@ public class Config {
 
         mailSender.setDefaultEncoding("UTF-8");
         mailSender.setHost(host);
-        mailSender.setPort(587);
+        mailSender.setPort(465);
         mailSender.setPassword(password);
         mailSender.setUsername(username);
         mailSender.setProtocol("smtp");
