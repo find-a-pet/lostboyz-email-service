@@ -1,6 +1,7 @@
 package com.mtotowamkwe.lostboyzemailservice.config;
 
 import com.mtotowamkwe.lostboyzemailservice.util.Constants;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +19,15 @@ import java.util.Properties;
 @Component
 @ComponentScan({"com.mtotowamkwe.lostboyzemailservice.service", "com.mtotowamkwe.lostboyzemailservice.model.restful"})
 public class Config {
+
+    @Value("${spring.mail.host}")
+    private String host;
+
+    @Value("${spring.mail.username}")
+    private String username;
+
+    @Value("${spring.mail.password}")
+    private String password;
 
     @Bean
     public SpringTemplateEngine templateEngine() {
@@ -41,10 +51,10 @@ public class Config {
         JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
 
         mailSender.setDefaultEncoding("UTF-8");
-        mailSender.setHost("smtp.mailtrap.io");
+        mailSender.setHost(host);
         mailSender.setPort(465);
-        mailSender.setPassword("cfa35f8b322f81");
-        mailSender.setUsername("a1a4a1d6b62071");
+        mailSender.setPassword(password);
+        mailSender.setUsername(username);
         mailSender.setProtocol("smtp");
 
         Properties properties = mailSender.getJavaMailProperties();
