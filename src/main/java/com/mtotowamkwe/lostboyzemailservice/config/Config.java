@@ -29,6 +29,9 @@ public class Config {
     @Value("${spring.mail.password}")
     private String password;
 
+    @Value("${spring.mail.port}")
+    private int port;
+
     @Bean
     public SpringTemplateEngine templateEngine() {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -52,7 +55,7 @@ public class Config {
 
         mailSender.setDefaultEncoding("UTF-8");
         mailSender.setHost(host);
-        mailSender.setPort(465);
+        mailSender.setPort(port);
         mailSender.setPassword(password);
         mailSender.setUsername(username);
         mailSender.setProtocol("smtp");
