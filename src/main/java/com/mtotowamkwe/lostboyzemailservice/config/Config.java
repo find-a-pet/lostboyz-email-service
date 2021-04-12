@@ -29,8 +29,8 @@ public class Config {
     @Value("${spring.mail.password}")
     private String password;
 
-    @Value("${spring.mail.port}")
-    private int port;
+    @Value("${email.from}")
+    private String emailSentFrom;
 
     @Bean
     public SpringTemplateEngine templateEngine() {
@@ -55,7 +55,7 @@ public class Config {
 
         mailSender.setDefaultEncoding("UTF-8");
         mailSender.setHost(host);
-        mailSender.setPort(port);
+        mailSender.setPort(587);
         mailSender.setPassword(password);
         mailSender.setUsername(username);
         mailSender.setProtocol("smtp");
@@ -65,6 +65,11 @@ public class Config {
         properties.put("mail.smtp.starttls.enable", "true");
 
         return mailSender;
+    }
+
+    @Bean
+    public String getEmailSender() {
+        return emailSentFrom;
     }
 
 }

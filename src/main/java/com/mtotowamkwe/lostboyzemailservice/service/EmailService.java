@@ -29,9 +29,13 @@ public class EmailService {
 
     private Context context = new Context();
 
-    public EmailService(@Qualifier("javaMailSender") JavaMailSender emailSender, SpringTemplateEngine templateEngine) {
+    private final String emailIsFrom;
+
+    public EmailService(@Qualifier("javaMailSender") JavaMailSender emailSender, SpringTemplateEngine templateEngine,
+                        @Qualifier("getEmailSender") String emailIsFrom) {
         this.emailSender = emailSender;
         this.templateEngine = templateEngine;
+        this.emailIsFrom = emailIsFrom;
     }
 
     public User sendSimpleMessage(User user) {
@@ -61,7 +65,7 @@ public class EmailService {
         Email email = new Email();
 
         email.setTo(user.getEmail());
-        email.setFrom(Constants.EMAIL_FROM);
+        email.setFrom(emailIsFrom);
         email.setSubject(Constants.EMAIL_SUBJECT);
         email.setModel(new HashMap<String, String>(){{
                 put(Constants.USER_CODE_KEY, user.getCode());

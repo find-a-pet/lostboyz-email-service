@@ -14,12 +14,11 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.thymeleaf.context.Context;
 import org.thymeleaf.spring5.SpringTemplateEngine;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-
-import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = {Config.class})
@@ -94,7 +93,7 @@ public class EmailServiceTest {
 
     @Test
     public void sendSimpleMessage() {
-        User aUser = new EmailService(emailSender, templateEngine).sendSimpleMessage(user);
+        User aUser = new EmailService(emailSender, templateEngine, Constants.EMAIL_FROM).sendSimpleMessage(user);
         assertNotNull(aUser);
         assertThat(aUser, instanceOf(User.class));
         assertThat(aUser).usingRecursiveComparison().isEqualTo(user);
@@ -103,13 +102,13 @@ public class EmailServiceTest {
     @Test(expected = IllegalArgumentException.class)
     public void testIllegalArgumentException() {
         User emptyUser = new User();
-        EmailService emailService = new EmailService(emailSender, templateEngine);
+        EmailService emailService = new EmailService(emailSender, templateEngine, Constants.EMAIL_FROM);
         emailService.sendSimpleMessage(emptyUser);
     }
 
     @Test
     public void emailFactory() {
-        Email email = new EmailService(emailSender, templateEngine).emailFactory(user);
+        Email email = new EmailService(emailSender, templateEngine, Constants.EMAIL_FROM).emailFactory(user);
         assertNotNull(email);
         assertThat(email, instanceOf(Email.class));
     }
